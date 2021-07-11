@@ -1,0 +1,57 @@
+<div id="blogsection">
+  <header>
+    <h1> <img src="/images/hp3.svg" alt="A logo" width="50px"> MIXD </h1>
+    <div class="navigation">
+      <span class="nav-alink">
+        <a href="/users/login"> Log In</a>
+      </span><span class="nav-alink">
+        <a href="/users/register"> Register</a>
+      </span>
+    </div>
+  </header>
+  <form action="/search" method="get">
+    <div class="form-group search ">
+
+      <input type="text" name="keyword" id="keyword" class="search-input" placeholder="Search by keyword">
+      <button type="submit" class="search-icon"><span class="material-icons ">search</span></button>
+
+      <input type="text" name="author" id="author" class="search-input" placeholder="Search by author">
+      <button type="submit" class="search-icon"><span class="material-icons ">search</span></button> 
+      
+      <label for="sortType"> Sort by:</label>
+      <input type="radio" class="rad-btn" name="sortType" value="desc" class="search-input" checked> Latest
+      <input type="radio" class="rad-btn" name="sortType" value="asc" class="search-input"> Oldest
+      
+      <button type="submit" class="search-button"> Go</button>
+
+    </div>
+  </form>
+  <div class='card-article'>
+    <% articles.forEach(article=> { %>
+      <div class=article-section>
+        <div>
+          <div class="img-container">
+            <img class="article-img" data-name='Thushar' data-last='harish'
+              src="/uploads/<%= article.authorId %><%= article.title %>" alt="image" />
+          </div>
+
+          <h3>
+            <a href="/article/show/<%= article.title %>">
+              <%= article.title.toUpperCase() %>
+            </a>
+          </h3>
+        </div>
+        <div>
+
+          <span>
+            <%= article.date.toDateString() %>
+          </span>
+          <a href="/article/sort/<%= article.userTable.name %> /<%= article.authorId %>">
+            <span>
+              <%= article.userTable.name %>
+            </span> </a>
+        </div>
+      </div>
+      <% })%>
+  </div>
+</div>

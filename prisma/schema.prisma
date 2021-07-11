@@ -1,0 +1,32 @@
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL_LOCAL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["orderByRelation"]
+}
+
+model article{
+  id Int @id @default(autoincrement())
+  authorId Int?
+  title String @unique
+  description String?
+  markdown String
+  date DateTime @default(now())
+  userTable     userTable?   @relation(fields: [authorId], references: [id])
+}
+
+
+model userTable{
+id  Int @id @default(autoincrement())
+ name String?
+ email String @unique
+ password String
+ date  DateTime @default(now())
+ article article[]
+}
+
+

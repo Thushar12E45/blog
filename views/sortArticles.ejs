@@ -1,0 +1,27 @@
+<div id="blogsection">
+  <header class="blog">
+    <h3> Search by <%= userName %></h3>
+    <div class="newArticle">
+      <a href="/" class="abutton green"> All Articles</a>
+      <a class="abutton green" href="/login"> Log In</a>
+    </div>
+  </header>
+  <% articles.forEach(article=> { %>
+    <div class=article-section>
+      <h1>
+        <%= article.title %>
+      </h1>
+      <a href="/article/sort/<%= article.userTable.name %> /<%= article.authorId %>">
+      <span>
+        <%= article.userTable.name %>
+      </span> </a>
+      <span>
+        <%= article.date.toLocaleDateString() %>
+      </span> 
+      <p>
+        <%= article.description%>
+      </p>
+      <a href="/article/show/<%= article.title %>" class="abutton blue"> Read More</a>
+    </div>
+    <% })%>
+</div>

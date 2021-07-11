@@ -1,0 +1,16 @@
+
+
+<!-- edit article -->
+<h1> <img src="/images/hp3.svg" alt="A logo" width="50px"> <a href="/" > MIXD</a>
+</h1>
+
+<div class="new-article">
+<h2> Edit Article</h2>
+
+<form action="/article/update/<%= newArticle.id%>" method="post" enctype="multipart/form-data">
+    <%- include('../partials/messages') %>
+    <%- include('../partials/form_fields')%>
+        <button type="submit" class="btn green"> Update </button>
+        <a href="/article/userArticles" class="abutton grey"> Cancel </a>
+</form>
+</div>

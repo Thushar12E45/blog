@@ -1,0 +1,13 @@
+<h1> <img src="/images/hp3.svg" alt="A logo" width="50px"> <a href="/" > MIXD</a>
+</h1>
+
+<div class="new-article">
+<h2> New Article</h2>
+
+<form action="/" method="post" enctype="multipart/form-data">
+  <%- include('../partials/messages') %>
+    <%- include('../partials/form_fields')%>
+      <button type="submit" class="btn green"> Publish Article </button>
+      <a href="/article/userArticles" class="abutton grey"> Cancel </a>
+</form>
+</div>

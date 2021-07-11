@@ -1,0 +1,45 @@
+
+<header>
+  <h1> <img src="/images/hp3.svg" alt="A logo" width="50px"> <a href="/" > MIXD</a>
+  </h1>
+  <div class="navigation">
+    <span class="nav-alink">
+      <a  href="/article/newArticle"> New Article </a>
+    </span><span class="nav-alink">
+      <a href="/" > Logout </a>
+    </span>
+  </div>
+</header>
+
+<h3> Hello <%= userName %>,
+</h3>
+
+  <div class='card-article'>
+    <% articles.forEach(article=> { %>
+      <div class=article-section>
+        <div>
+          <div class="img-container"> 
+        <img class="article-img" data-name='Thushar' data-last='harish' src="https://source.unsplash.com/random/400"
+          alt="image" />
+        </div>
+
+        <h3>
+          <a href="/article/showUserArticle/<%= article.title %>" > <%= article.title.toUpperCase() %>
+          </a>
+        </h3>
+        
+       </div>
+       <div>
+        <span>
+          <%= article.date.toDateString() %>  
+        </span> 
+       <span>
+        <a href="/article/editArticle/<%= article.title%>" > Edit </a> 
+      <a href="/article/deleteArticle/<%= article.title%>" > Delete </a>
+  </span>
+        
+      </div>
+      </div>
+      <% })%>
+  </div>
+    </div>

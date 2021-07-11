@@ -1,0 +1,31 @@
+<!-- <header> -->
+  <h1> <img src="/images/hp3.svg" alt="A logo" width="50px"> <a href="/" > MIXD</a>
+  </h1>
+ 
+<!-- </header> -->
+<h2> Login</h2>
+
+<div class="page-divide">
+<img src="/images/coder2.png" alt="Image of a coder working" class="left-side">
+<div class="right-side login">
+      <%- include ('partials/messages') %>
+  <form action="/users/login" method="POST">
+    <div class="form-group  ">
+      <label for="email"> Email </label>
+      <input type="email" id="email" name="email" class="form-control  login-form"  />
+    </div>
+    <div class="form-group">
+      <label for="password"> Password</label>
+      <input type="password" id="password" name="password" class="form-control login-form"  />
+    </div>
+    <div class="center">
+    <button type="submit" class="btn blue">Login</button>
+    <a href="/" class="abutton grey"> &ensp;&emsp;Cancel </a>
+  </div>
+  </form>
+  <h5>
+    <a href="/users/register" class="center">Need an account?</a>
+  </h5>
+</div>
+</div>
+
